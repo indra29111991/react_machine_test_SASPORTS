@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+:root {
+  --bg: #fafafa;
+  --bg-offset: white;
+  --text: #111517;
+  --gray: #858585;
+  --border: rgba(0, 0, 0, 0.1);
+}
+ul,
+ol {
+  list-style: none;
+  padding-left: unset !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34; */
+  height: 80px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+  cursor: pointer;
+}
+.logo {
+  width: 150px;
+}
+.wrapper {
+  width: 96%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.card-grid {
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 48px;
+}
+.card {
+  background-color: #242323;
+  padding: 0px;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 450px;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card:hover .card-content h4 {
+  display: block;
+  -webkit-line-clamp: none;
+  -webkit-box-orient: none;
+  overflow: visible;
+}
+.card-image {
+  /* max-height: 150px; */
+}
+.card-image img {
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card-content {
+  padding: 15px;
+}
+.card-content h4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-list {
+  margin-top: 16px;
+}
+.card-list li {
+  color: var(--bg-offset);
+  margin-top: 8px;
+}
+.card-list li span {
+  color: var(--gray);
+}
+.App-header h2 {
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 600px) {
+  .card {
+    background-color: #242323;
+    padding: 0px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 550px;
   }
 }
